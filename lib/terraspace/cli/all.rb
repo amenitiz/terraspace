@@ -51,6 +51,7 @@ class Terraspace::CLI
 
     desc "show", "Run show for all or multiple stacks."
     long_desc Help.text("all/show")
+    option :plan, desc: "Plan path. Can be a pattern like :MOD_NAME.plan"
     def show(*stacks)
       Terraspace::All::Runner.new("show", @options.merge(stacks: stacks)).run
     end
